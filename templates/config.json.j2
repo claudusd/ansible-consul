@@ -5,6 +5,9 @@
 
     {## Node ##}
     "node_name": "{{ consul_node_name }}",
+    {% if consul_server_name|length > 0 %}
+    "server_name": "{{ consul_server_name }}",
+    {% endif %}
     "datacenter": "{{ consul_datacenter }}",
     "domain": "{{ consul_domain }}",
     {% if consul_alt_domain %}
